@@ -23,12 +23,17 @@ def random_walk_2(n):
  
 #写一个计数器
 toofar_counter=0
-how_many_simulations=1000
+how_many_simulations=50
 far_limit=50
+x=[]
+y=[]
     
 for i in range(how_many_simulations):
      one_walk=random_walk_2(30)
      
+     x.append(one_walk[0])
+     y.append(one_walk[1])
+     print(x,y,'onewalk')
 #    print(one_walk)
      how_far=int(one_walk[0])**2+int(one_walk[1]**2)
      if how_far>=far_limit:
@@ -37,6 +42,10 @@ for i in range(how_many_simulations):
      else:
          pass
 #         print(one_walk,how_far,'Ok.')
+     print(x,y)
+     plt.plot(x,y,'x')
+     plt.show()    
+
 
 #得到模拟中的比例
 print('% of too far:',
