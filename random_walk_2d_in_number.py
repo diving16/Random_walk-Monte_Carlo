@@ -12,11 +12,35 @@ def random_walk_2(n):
     
     return (x,y)
 
-for i in range(100):
-    one_walk=random_walk_2(20)
-    print(one_walk,'how far:',abs(one_walk[0])+
-          abs(one_walk[1]))
 
+# =============================================================================
+# for i in range(100):
+#     one_walk=random_walk_2(20)
+#     print(one_walk,'how far:',abs(one_walk[0])+
+#           abs(one_walk[1]))
+# 
+# =============================================================================
+ 
+#写一个计数器
+toofar_counter=0
+how_many_simulations=1000
+far_limit=50
+    
+for i in range(how_many_simulations):
+     one_walk=random_walk_2(30)
+     
+#    print(one_walk)
+     how_far=int(one_walk[0])**2+int(one_walk[1]**2)
+     if how_far>=far_limit:
+#         print(one_walk,how_far,'It is too far away from home.')
+         toofar_counter+=1
+     else:
+         pass
+#         print(one_walk,how_far,'Ok.')
+
+#得到模拟中的比例
+print('% of too far:',
+      toofar_counter/how_many_simulations)
 
 # =============================================================================
 # def random_walk(n):
@@ -35,7 +59,7 @@ for i in range(100):
 #     return(x,y)
 # 
 #    
-# for i in range(2):
+# for i in range(100):
 #     one_walk=random_walk(10)
 #     
 # #    print(one_walk)
